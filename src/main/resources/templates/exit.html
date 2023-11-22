@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Registration Success</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+	<div class="card" style="background-color: #e3edec;width: 800px; margin: auto;">
+
+		<div class="card-body">
+
+
+			<form th:action="@{/exitsubmit}" method="post" enctype="multipart/form-data">
+				<div class="container">
+					<div class="row">
+						<div class="col"> <label for="employeeId">Employee ID:</label> </div>
+						<div class="col"><input type="number" min="0" step="1" th:name="employeeId"
+								th:value="${obj?.employeeId}" />
+						</div>
+						<div class="col"><input type="submit" th:name="submit" value="Submit Exit" /></div>
+						<div class="col" th:if="${not #strings.isEmpty(emptyerror)}">
+							<p th:text="${emptyerror}"></p>
+						</div>
+					</div>
+				</div>
+
+
+		</div>
+	</div>
+	</form>
+
+
+</body>
+
+</html>
